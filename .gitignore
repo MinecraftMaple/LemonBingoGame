@@ -1,0 +1,32 @@
+# Maven build output
+target/
+
+# IDE metadata
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# Local Java/Maven files
+.classpath
+.project
+.settings/
+*.log
+
+# Local server/runtime data
+run/
+server/
+plugins/
+snapshots.yml
+*.lck
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# Operating-system metadata
+.DS_Store
+Thumbs.db
+desktop.ini

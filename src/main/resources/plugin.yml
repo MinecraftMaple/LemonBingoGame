@@ -1,0 +1,21 @@
+name: BingoGame
+version: '1.0.0'
+main: dev.Jonsen233.BingoGame.BingoGamePlugin
+api-version: '1.21'
+authors: [Jonsen233]
+description: Minecraft Bingo for Paper 1.21.8
+website: https://github.com/MinecraftMaple/LemonBingoGame
+softdepend: [LuckPerms, PlaceholderAPI]
+commands:
+  bingo:
+    description: Minecraft Bingo game commands
+    usage: /bingo <join|leave|spectate|board|map|start|stop|stats|top|reload>
+    aliases: [bingogame]
+    permission: bingogame.play
+permissions:
+  bingogame.play:
+    description: Join and inspect Bingo games
+    default: true
+  bingogame.admin:
+    description: Start, stop, and reload Bingo games
+    default: op

@@ -1,0 +1,68 @@
+mongodb:
+  enabled: true
+  connection-string: 'mongodb://localhost:27017'
+  database: 'BingoGame'
+  player-collection: 'player_stats'
+  game-collection: 'games'
+  server-selection-timeout-ms: 2000
+  auto-create-database: true
+  ensure-indexes: true
+
+game:
+  min-players: 2
+  max-players: 16
+  max-spectators: 32
+  countdown-seconds: 30
+  time-limit-seconds: 1800
+  world-border-size: 2048
+  world-name-prefix: 'bingo_'
+  # A round owns all enabled dimensions so Nether and End goals remain obtainable.
+  enable-nether: true
+  enable-end: true
+  win-condition: 'LINE'
+  # Leave empty to use the built-in, vanilla-obtainable goal pool. Add at least
+  # 25 unique Bukkit Material names when creating a custom card pool.
+  goal-pool: []
+  # If true, a round fails to start when a configured goal is unknown or not an item.
+  validate-goal-pool: true
+  reconnect-players: true
+  keep-inventory-on-death: true
+  allow-pvp: false
+
+display:
+  board-title: '&6&lBINGO'
+  board-item-name: '&f%item%'
+  board-complete-name: '&a&l%item%'
+  board-item-lore: true
+  board-slot-label: '&7Slot %slot%'
+  board-incomplete-label: '&eNot collected'
+  board-complete-label: '&aCollected'
+  board-command-size: 27
+  bossbar: true
+
+protection:
+  protect-lobby: true
+  protect-after-finish: true
+  prevent-outside-world-interaction: true
+
+messages:
+  prefix: '&6&lBingo &8> &r'
+  no-permission: '&cYou do not have permission.'
+  joined: '&aJoined the Bingo queue. Players: &e%players%/%max%'
+  left: '&eYou left the Bingo game.'
+  already-joined: '&eYou are already in the Bingo game.'
+  not-joined: '&cYou are not in the current Bingo game.'
+  countdown: '&eBingo starts in &6%seconds% &eseconds.'
+  need-players: '&cAt least %min% players are required to start.'
+  game-start: '&aBingo started! Collect items and complete a line. Use &e/bingo board &ato view your card.'
+  game-stop: '&cThe Bingo game was stopped by an administrator.'
+  finish: '&6&l%winner% &ecompleted Bingo!'
+  timeout: '&eTime is up! &6%winner% &ewins with &f%progress% percent &eprogress.'
+  no-game: '&cThere is no active Bingo game.'
+  board-open: '&7Your Bingo card is shown below. Green entries are complete.'
+  item-found: '&aBingo item complete: &f%item% &7(%progress%/25)'
+  stats: '&e%player% &7| Games: &f%games% &7Wins: &a%wins% &7Win rate: &f%winrate% &7Best streak: &6%beststreak%'
+  mongo-disabled: '&eMongoDB is unavailable; statistics are memory-only.'
+  spectate-start: '&eYou are spectating the current Bingo round. Use &f/bingo leave &eto exit.'
+  spectate-already: '&eYou are already spectating this round. Use &f/bingo leave &eto exit.'
+  spectate-unavailable: '&cThere is no active Bingo round to spectate, or the spectator limit has been reached.'

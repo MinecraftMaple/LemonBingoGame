@@ -1,0 +1,14 @@
+# Server-side tab list. Supports & color codes, PlaceholderAPI tokens, and
+# built-ins: {player}, {player_name}, {luckperms_prefix}, {online_players},
+# {max_players}, and {server}. LuckPerms is optional and is resolved when
+# its service is available.
+tab:
+  enabled: true
+  refresh-interval-ticks: 20
+  header:
+    - "&6&lBINGO GAME"
+    - "&7Players: &a{online_players}&7/&a{max_players}"
+  player-name-format: "{luckperms_prefix}{player}"
+  footer:
+    - "&eCollect items and complete a line!"
+    - "&7Use &f/bingo board &7to view your card"

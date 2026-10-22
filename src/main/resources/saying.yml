@@ -1,0 +1,7 @@
+# Paper chat format compatible with Printer's saying.yml.
+# Supports & color codes, PlaceholderAPI tokens, {player}, {message}, and
+# direct LuckPerms {luckperms_prefix} / %luckperms_prefix% variables.
+saying:
+  enabled: true
+  refresh-interval-ticks: 20
+  format: "[{luckperms_prefix}]&f{player}: &r{message}"

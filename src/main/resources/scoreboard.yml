@@ -1,0 +1,60 @@
+# Native sidebar configuration compatible with Printer's scoreboard.yml.
+# Supports & color codes, PlaceholderAPI tokens, LuckPerms prefix, and Bingo variables.
+# Built-ins: {date}, {server}, {status}, {player}, {current_players}, {max_players},
+# {min_players}, {start_time}, {round}, {wall}, {walls_per_round}, {score},
+# {progress}, {remaining_seconds}, {time}, {active_players}, {wins}, {player_rank},
+# {leader_1_player}, {leader_1_score} through leader_3.
+scoreboard:
+  enabled: true
+  refresh-interval-ticks: 20
+  max-line-length: 64
+  title: "&6&lBINGO"
+  date-format: "MM/dd/yy"
+  server: "Bingo Server"
+  status:
+    waiting: "Waiting"
+    countdown: "Starting"
+    running: "In Game"
+    ending: "Ending"
+  waiting:
+    waiting-text: "Waiting..."
+    lines:
+      - "&7{date}"
+      - ""
+      - "&fPlayers: &a{current_players}&7/&a{max_players}"
+      - "&fStart: &a{start_time}"
+      - ""
+      - "&fStatus: &a{status}"
+      - ""
+      - "&e{server}"
+  running:
+    lines:
+      - "&7{date}"
+      - ""
+      - "&fStatus: &a{status}"
+      - "&fTime: &a{time}"
+      - "&fProgress: &a{progress}&7/&a25"
+      - "{leaderboard}"
+      - ""
+      - "&fPlayers: &a{active_players}"
+      - "&fWins: &a{wins}"
+      - ""
+      - "&e{server}"
+    leaderboard:
+      rank-1-line: "&e1. &f{leader_1_player} &a{leader_1_score}"
+      rank-2-line: "&e2. &f{leader_2_player} &a{leader_2_score}"
+      rank-3-line: "&e3. &f{leader_3_player} &a{leader_3_score}"
+      separator-line: "&7....."
+      self-line: "&e{player_rank}. &f{player} &a{wins}"
+      missing-player: "-"
+  spectator:
+    lines:
+      - "&7{date}"
+      - ""
+      - "&fStatus: &a{status}"
+      - "&fTime: &a{time}"
+      - "&fPlayers: &a{active_players}"
+      - ""
+      - "&7You are spectating"
+      - ""
+      - "&e{server}"
